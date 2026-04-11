@@ -24,6 +24,7 @@ const Waitlist = () => {
             Compass<span className="text-secondary">CHW</span>
           </Link>
           <div className="hidden md:flex items-center gap-8">
+            <Link to="/" className="text-body-sm text-muted-foreground hover:text-foreground transition-colors">Home</Link>
             <a href="/#services" className="text-body-sm text-muted-foreground hover:text-foreground transition-colors">Services</a>
             <a href="/#how-it-works" className="text-body-sm text-muted-foreground hover:text-foreground transition-colors">How It Works</a>
             <a href="/#for-chws" className="text-body-sm text-muted-foreground hover:text-foreground transition-colors">For CHWs</a>
