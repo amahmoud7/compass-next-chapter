@@ -50,7 +50,7 @@ const Hero = () => {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <Button variant="hero" size="xl" className="text-primary-foreground">
+              <Button variant="hero" size="xl" className="text-primary-foreground" onClick={() => navigate("/auth")}>
                 Start Earning as a CHW
                 <ArrowRight className="ml-1" />
               </Button>
