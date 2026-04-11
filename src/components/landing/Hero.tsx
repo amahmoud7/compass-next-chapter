@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, CheckCircle, DollarSign } from "lucide-react";
 import heroImage from "@/assets/hero-chw.jpg";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section className="relative overflow-hidden bg-background">
       {/* Navbar */}
@@ -19,7 +21,7 @@ const Hero = () => {
           </div>
           <div className="flex items-center gap-3">
             <Button variant="ghost" size="sm" className="hidden sm:inline-flex">Log In</Button>
-            <Button variant="default" size="sm">Join Waitlist</Button>
+            <Button variant="default" size="sm" onClick={() => navigate("/waitlist")}>Join Waitlist</Button>
           </div>
         </div>
       </nav>
