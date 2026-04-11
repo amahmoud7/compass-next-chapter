@@ -21,8 +21,7 @@ const Hero = () => {
             <a href="#for-chws" className="text-body-sm text-muted-foreground hover:text-foreground transition-colors">For CHWs</a>
           </div>
           <div className="flex items-center gap-3">
-            <Button variant="ghost" size="sm" className="hidden sm:inline-flex">Log In</Button>
-            <Button variant="default" size="sm" onClick={() => navigate("/waitlist")}>Join Waitlist</Button>
+            <Button variant="default" size="sm" className="text-primary-foreground" onClick={() => navigate("/waitlist")}>Join Waitlist</Button>
           </div>
         </div>
       </nav>
@@ -51,7 +50,7 @@ const Hero = () => {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <Button variant="hero" size="xl">
+              <Button variant="hero" size="xl" className="text-primary-foreground">
                 Start Earning as a CHW
                 <ArrowRight className="ml-1" />
               </Button>
