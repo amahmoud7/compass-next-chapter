@@ -35,10 +35,10 @@ const ForCHWs = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-compass-dark/50 via-transparent to-transparent" />
 
               {/* Earnings card overlay */}
-              <div className="absolute bottom-6 left-6 right-6 bg-card/90 backdrop-blur-md rounded-xl p-4 border border-border/50">
-                <p className="text-label text-muted-foreground uppercase">Avg. Earnings</p>
-                <p className="text-display-sm text-foreground">$22<span className="text-body-sm text-muted-foreground font-normal"> / session</span></p>
-                <p className="text-body-sm text-compass-green mt-1 font-medium">Reimbursed via Medi-Cal</p>
+              <div className="absolute bottom-6 left-6 right-6 bg-primary/95 backdrop-blur-md rounded-xl p-4">
+                <p className="text-label text-primary-foreground/70 uppercase">Avg. Earnings</p>
+                <p className="text-display-sm text-primary-foreground">$22<span className="text-body-sm text-primary-foreground/70 font-normal"> / session</span></p>
+                <p className="text-body-sm text-secondary mt-1 font-medium">Reimbursed via Medi-Cal</p>
               </div>
             </div>
           </motion.div>
@@ -51,19 +51,19 @@ const ForCHWs = () => {
             transition={{ duration: 0.6 }}
             className="order-1 lg:order-2"
           >
-            <p className="text-label text-compass-green uppercase tracking-wider mb-3">For Community Health Workers</p>
+            <p className="text-label text-primary uppercase tracking-wider mb-3">Why CHWs Choose Compass</p>
             <h2 className="text-display-md md:text-display-lg text-foreground mb-4">
-              Earn money helping <span className="text-gradient-brand">your neighbors</span>
+              Earn money helping <span className="text-secondary">your neighbors</span>
             </h2>
             <p className="text-body-lg text-muted-foreground mb-8 max-w-lg">
-              Join Compass as a CHW and get reimbursed for every session. Work flexible hours, stay local, and make a real difference.
+              Join Compass as a CHW and get reimbursed for every session. Work flexible hours, stay local, and build a career making a real difference in your community.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
-              {benefits.map((b, i) => (
+              {benefits.map((b) => (
                 <div key={b.title} className="flex gap-3 items-start">
-                  <div className="w-10 h-10 rounded-xl bg-compass-green/10 flex items-center justify-center flex-shrink-0">
-                    <b.icon className="w-5 h-5 text-compass-green" />
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <b.icon className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <p className="font-display font-bold text-foreground text-body-md">{b.title}</p>

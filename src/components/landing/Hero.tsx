@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, CheckCircle, Star } from "lucide-react";
+import { ArrowRight, Shield, CheckCircle, DollarSign } from "lucide-react";
 import heroImage from "@/assets/hero-chw.jpg";
 
 const Hero = () => {
@@ -10,7 +10,7 @@ const Hero = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
         <div className="container flex items-center justify-between h-16">
           <a href="/" className="font-display text-xl font-bold text-foreground tracking-tight">
-            Compass<span className="text-compass-green-light">CHW</span>
+            Compass<span className="text-secondary">CHW</span>
           </a>
           <div className="hidden md:flex items-center gap-8">
             <a href="#services" className="text-body-sm text-muted-foreground hover:text-foreground transition-colors">Services</a>
@@ -19,7 +19,7 @@ const Hero = () => {
           </div>
           <div className="flex items-center gap-3">
             <Button variant="ghost" size="sm" className="hidden sm:inline-flex">Log In</Button>
-            <Button variant="default" size="sm">Sign Up</Button>
+            <Button variant="default" size="sm">Join Waitlist</Button>
           </div>
         </div>
       </nav>
@@ -33,27 +33,27 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-compass-green/10 mb-6">
-              <div className="w-2 h-2 rounded-full bg-compass-green animate-pulse" />
-              <span className="text-label text-compass-green uppercase">Now in Los Angeles</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 mb-6">
+              <div className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+              <span className="text-label text-primary uppercase">Launching in Los Angeles</span>
             </div>
 
             <h1 className="text-display-lg md:text-display-xl tracking-tight text-foreground">
-              Care navigation.{" "}
-              <span className="text-gradient-brand">On demand.</span>
+              Your CHW career,{" "}
+              <span className="text-secondary">on your terms.</span>
             </h1>
 
             <p className="mt-5 text-body-lg text-muted-foreground max-w-lg">
-              Get matched with a trained Community Health Worker in your neighborhood — for housing, food, recovery, mental health, and healthcare. <strong className="text-foreground">At no cost to you.</strong>
+              Compass connects <strong className="text-foreground">Community Health Workers</strong> with residents who need help navigating housing, food, recovery, and healthcare — and <strong className="text-foreground">pays you for every session</strong> through Medi-Cal.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <Button variant="hero" size="xl">
-                Get Started Free
+                Start Earning as a CHW
                 <ArrowRight className="ml-1" />
               </Button>
               <Button variant="outline" size="xl">
-                Become a CHW
+                I Need Help
               </Button>
             </div>
 
@@ -61,11 +61,11 @@ const Hero = () => {
             <div className="mt-8 flex flex-wrap gap-3">
               {[
                 { icon: Shield, label: "HIPAA Compliant" },
-                { icon: CheckCircle, label: "Medi-Cal Accepted" },
-                { icon: Star, label: "No Cost to Members" },
+                { icon: CheckCircle, label: "Medi-Cal Reimbursed" },
+                { icon: DollarSign, label: "$0 Cost to Members" },
               ].map(({ icon: Icon, label }) => (
                 <div key={label} className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-card border border-border shadow-card">
-                  <Icon className="w-4 h-4 text-compass-green" />
+                  <Icon className="w-4 h-4 text-primary" />
                   <span className="text-body-sm font-medium text-foreground">{label}</span>
                 </div>
               ))}
@@ -90,21 +90,21 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-compass-dark/40 via-transparent to-transparent" />
               
               {/* Floating stat card */}
-              <div className="absolute bottom-6 left-6 right-6 bg-card/90 backdrop-blur-md rounded-2xl p-4 border border-border/50">
+              <div className="absolute bottom-6 left-6 right-6 bg-primary/95 backdrop-blur-md rounded-2xl p-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-label text-muted-foreground uppercase">Active CHWs</p>
-                    <p className="text-display-sm text-foreground">200+</p>
+                    <p className="text-label text-primary-foreground/70 uppercase">Active CHWs</p>
+                    <p className="text-display-sm text-primary-foreground">200+</p>
                   </div>
-                  <div className="h-10 w-px bg-border" />
+                  <div className="h-10 w-px bg-primary-foreground/20" />
                   <div>
-                    <p className="text-label text-muted-foreground uppercase">Communities</p>
-                    <p className="text-display-sm text-foreground">LA County</p>
+                    <p className="text-label text-primary-foreground/70 uppercase">Avg. Earnings</p>
+                    <p className="text-display-sm text-primary-foreground">$22<span className="text-body-sm text-primary-foreground/70">/session</span></p>
                   </div>
-                  <div className="h-10 w-px bg-border" />
+                  <div className="h-10 w-px bg-primary-foreground/20" />
                   <div>
-                    <p className="text-label text-muted-foreground uppercase">Cost</p>
-                    <p className="text-display-sm text-compass-green">$0</p>
+                    <p className="text-label text-primary-foreground/70 uppercase">Member Cost</p>
+                    <p className="text-display-sm text-primary-foreground">$0</p>
                   </div>
                 </div>
               </div>
