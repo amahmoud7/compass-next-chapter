@@ -5,39 +5,34 @@ const services = [
   {
     icon: Home,
     title: "Housing",
-    description: "Rental assistance, shelter navigation, and housing stability support.",
-    color: "bg-compass-green/10 text-compass-green",
+    description: "Help members find rental assistance, shelter, and housing stability resources.",
   },
   {
     icon: Pill,
     title: "Rehab & Recovery",
-    description: "Substance use recovery resources, sober living, and peer support connections.",
-    color: "bg-compass-gold/10 text-compass-gold",
+    description: "Connect members to substance use recovery, sober living, and peer support.",
   },
   {
     icon: Apple,
     title: "Food & Pantry",
-    description: "Food pantry access, CalFresh enrollment, and nutrition program navigation.",
-    color: "bg-compass-green-light/10 text-compass-green-light",
+    description: "Navigate CalFresh enrollment, food pantries, and nutrition programs.",
   },
   {
     icon: Brain,
     title: "Mental Health",
-    description: "Counseling referrals, crisis support resources, and wellness check-ins.",
-    color: "bg-compass-sage/10 text-compass-sage",
+    description: "Refer members to counseling, crisis support, and wellness check-ins.",
   },
   {
     icon: HeartPulse,
     title: "Healthcare",
-    description: "Medi-Cal enrollment, appointment scheduling, and care coordination.",
-    color: "bg-primary/10 text-primary",
+    description: "Assist with Medi-Cal enrollment, appointments, and care coordination.",
   },
 ];
 
 const stats = [
-  { value: "81%", label: "CHW engagement rate" },
+  { value: "81%", label: "CHW session completion" },
   { value: "5", label: "Service verticals" },
-  { value: "$22", label: "Avg. cost per unit" },
+  { value: "$22", label: "Avg. earning / session" },
   { value: "$0", label: "Cost to members" },
 ];
 
@@ -52,10 +47,13 @@ const Services = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <p className="text-label text-compass-green uppercase tracking-wider mb-3">What We Cover</p>
+          <p className="text-label text-primary uppercase tracking-wider mb-3">Service Areas</p>
           <h2 className="text-display-md md:text-display-lg text-foreground">
-            Five areas where your <br className="hidden md:block" />neighbors can help
+            Five verticals where <strong>CHWs make an impact</strong>
           </h2>
+          <p className="text-body-lg text-muted-foreground mt-3 max-w-2xl mx-auto">
+            As a Compass CHW, you'll guide members through these critical service areas — and get reimbursed for each session.
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
@@ -66,13 +64,13 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="group bg-card rounded-2xl p-6 border border-border hover:shadow-elevated hover:border-compass-green/20 transition-all duration-300 cursor-default"
+              className="group bg-card rounded-2xl p-6 border border-border hover:bg-primary hover:border-primary transition-all duration-300 cursor-default"
             >
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${service.color} transition-transform group-hover:scale-110`}>
-                <service.icon className="w-6 h-6" />
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 bg-primary/10 group-hover:bg-primary-foreground/20 transition-colors">
+                <service.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
-              <h3 className="font-display font-bold text-foreground mb-2">{service.title}</h3>
-              <p className="text-body-sm text-muted-foreground leading-relaxed">{service.description}</p>
+              <h3 className="font-display font-bold text-foreground group-hover:text-primary-foreground mb-2 transition-colors">{service.title}</h3>
+              <p className="text-body-sm text-muted-foreground group-hover:text-primary-foreground/80 leading-relaxed transition-colors">{service.description}</p>
             </motion.div>
           ))}
         </div>
@@ -83,7 +81,7 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-16 bg-gradient-dark rounded-2xl p-8 md:p-10"
+          className="mt-16 bg-primary rounded-2xl p-8 md:p-10"
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat) => (

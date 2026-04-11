@@ -6,57 +6,57 @@
 
 @layer base {
   :root {
-    /* Compass brand greens */
-    --background: 40 33% 97%;
-    --foreground: 150 20% 10%;
+    /* Compass brand — dark forest green */
+    --background: 35 30% 95%;
+    --foreground: 150 20% 12%;
 
-    --card: 40 20% 98%;
-    --card-foreground: 150 20% 10%;
+    --card: 35 22% 97%;
+    --card-foreground: 150 20% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 150 20% 10%;
+    --popover-foreground: 150 20% 12%;
 
-    /* Forest green - brand primary */
-    --primary: 152 42% 24%;
-    --primary-foreground: 40 33% 97%;
+    /* Dark forest green - primary */
+    --primary: 147 20% 30%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Sage green - secondary */
-    --secondary: 145 18% 42%;
-    --secondary-foreground: 40 33% 97%;
+    /* Sage / light green - secondary */
+    --secondary: 100 18% 52%;
+    --secondary-foreground: 0 0% 100%;
 
-    /* Warm cream muted */
-    --muted: 38 25% 92%;
+    /* Warm nude muted */
+    --muted: 33 22% 90%;
     --muted-foreground: 150 10% 45%;
 
-    /* Olive accent */
-    --accent: 90 15% 50%;
-    --accent-foreground: 40 33% 97%;
+    /* Sage accent */
+    --accent: 100 18% 52%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 38 20% 88%;
-    --input: 38 20% 88%;
-    --ring: 152 42% 24%;
+    --border: 33 18% 86%;
+    --input: 33 18% 86%;
+    --ring: 147 20% 30%;
 
     --radius: 0.75rem;
 
     /* Custom tokens */
-    --compass-green: 152 42% 24%;
-    --compass-green-light: 145 30% 36%;
-    --compass-cream: 40 33% 97%;
-    --compass-nude: 32 28% 90%;
-    --compass-dark: 150 25% 8%;
-    --compass-sage: 90 12% 55%;
+    --compass-green: 147 20% 30%;
+    --compass-green-light: 100 18% 52%;
+    --compass-cream: 35 30% 95%;
+    --compass-nude: 30 25% 88%;
+    --compass-dark: 150 22% 10%;
+    --compass-sage: 100 14% 58%;
     --compass-gold: 42 80% 55%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(152 42% 24%), hsl(145 30% 36%));
-    --gradient-warm: linear-gradient(180deg, hsl(40 33% 97%), hsl(32 28% 90%));
-    --gradient-dark: linear-gradient(180deg, hsl(150 25% 8%), hsl(152 42% 18%));
+    --gradient-hero: linear-gradient(135deg, hsl(147 20% 30%), hsl(100 18% 52%));
+    --gradient-warm: linear-gradient(180deg, hsl(35 30% 95%), hsl(30 25% 88%));
+    --gradient-dark: linear-gradient(180deg, hsl(150 22% 10%), hsl(147 20% 22%));
 
-    --shadow-card: 0 4px 24px -4px hsl(152 42% 24% / 0.08);
-    --shadow-elevated: 0 16px 48px -12px hsl(152 42% 24% / 0.15);
-    --shadow-glow: 0 0 40px hsl(152 42% 24% / 0.12);
+    --shadow-card: 0 4px 24px -4px hsl(147 20% 30% / 0.08);
+    --shadow-elevated: 0 16px 48px -12px hsl(147 20% 30% / 0.15);
+    --shadow-glow: 0 0 40px hsl(147 20% 30% / 0.12);
 
     --font-display: 'DM Sans', sans-serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;

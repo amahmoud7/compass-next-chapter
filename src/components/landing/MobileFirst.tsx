@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const MobileFirst = () => {
   return (
-    <section className="py-20 md:py-28 bg-muted/50">
+    <section className="py-20 md:py-28 bg-compass-nude">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -13,24 +13,24 @@ const MobileFirst = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-label text-compass-green uppercase tracking-wider mb-3">Mobile-First Experience</p>
+            <p className="text-label text-primary uppercase tracking-wider mb-3">Mobile-First Platform</p>
             <h2 className="text-display-md md:text-display-lg text-foreground mb-4">
-              Your health navigator,{" "}
-              <span className="text-gradient-brand">in your pocket</span>
+              Manage your CHW work{" "}
+              <span className="text-secondary">from your pocket</span>
             </h2>
             <p className="text-body-lg text-muted-foreground mb-8 max-w-lg">
-              Compass is built mobile-first so CHWs and members can connect from anywhere. Request help, track sessions, and manage your care — all from your phone.
+              Accept requests, log sessions, track earnings, and communicate with members — all from your phone. Compass is built mobile-first because your work happens in the field, not behind a desk.
             </p>
 
             <div className="space-y-4 mb-8">
               {[
-                "Request a CHW in under 60 seconds",
-                "Real-time session tracking & progress",
-                "Secure messaging with your health worker",
-                "Resource directory at your fingertips",
+                "Accept member requests in seconds",
+                "Log sessions & track your earnings in real time",
+                "Secure messaging with members",
+                "Access the full resource directory on the go",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-compass-green flex items-center justify-center flex-shrink-0">
+                  <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
                     <svg className="w-3.5 h-3.5 text-primary-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
@@ -63,40 +63,40 @@ const MobileFirst = () => {
                   <div className="flex gap-1">
                     <div className="w-4 h-2 bg-foreground/30 rounded-sm" />
                     <div className="w-4 h-2 bg-foreground/30 rounded-sm" />
-                    <div className="w-6 h-3 bg-compass-green rounded-sm" />
+                    <div className="w-6 h-3 bg-primary rounded-sm" />
                   </div>
                 </div>
 
-                {/* App content */}
+                {/* App content — CHW dashboard */}
                 <div className="px-5 flex-1">
                   <div className="flex items-center gap-2 mb-4">
-                    <Smartphone className="w-5 h-5 text-compass-green" />
+                    <Smartphone className="w-5 h-5 text-primary" />
                     <span className="font-display font-bold text-foreground">Compass</span>
                   </div>
 
-                  <h3 className="font-display font-bold text-lg text-foreground mb-1">Welcome back, Maria</h3>
-                  <p className="text-body-sm text-muted-foreground mb-5">Your next session is today</p>
+                  <h3 className="font-display font-bold text-lg text-foreground mb-1">Welcome back, Carlos</h3>
+                  <p className="text-body-sm text-muted-foreground mb-5">You have 2 sessions today</p>
 
                   {/* Session card */}
-                  <div className="bg-compass-green/10 rounded-2xl p-4 mb-4 border border-compass-green/20">
+                  <div className="bg-primary rounded-2xl p-4 mb-4">
                     <div className="flex justify-between items-start mb-2">
                       <div>
-                        <p className="font-display font-bold text-foreground text-body-md">Housing Support</p>
-                        <p className="text-body-sm text-muted-foreground">w/ Carlos M.</p>
+                        <p className="font-display font-bold text-primary-foreground text-body-md">Housing Support</p>
+                        <p className="text-body-sm text-primary-foreground/70">w/ Maria G.</p>
                       </div>
-                      <span className="text-label bg-compass-green text-primary-foreground px-2 py-1 rounded-full">2:00 PM</span>
+                      <span className="text-label bg-primary-foreground text-primary px-2 py-1 rounded-full">2:00 PM</span>
                     </div>
-                    <p className="text-body-sm text-muted-foreground">Rental assistance application review</p>
+                    <p className="text-body-sm text-primary-foreground/70">Rental assistance application review</p>
                   </div>
 
                   {/* Quick actions */}
                   <div className="grid grid-cols-2 gap-3">
                     <div className="bg-muted rounded-xl p-3 text-center">
-                      <p className="text-display-sm text-foreground font-display">3</p>
-                      <p className="text-label text-muted-foreground">Active Requests</p>
+                      <p className="text-display-sm text-foreground font-display">$176</p>
+                      <p className="text-label text-muted-foreground">This Week</p>
                     </div>
                     <div className="bg-muted rounded-xl p-3 text-center">
-                      <p className="text-display-sm text-foreground font-display">12</p>
+                      <p className="text-display-sm text-foreground font-display">24</p>
                       <p className="text-label text-muted-foreground">Sessions Done</p>
                     </div>
                   </div>
@@ -104,9 +104,9 @@ const MobileFirst = () => {
 
                 {/* Bottom nav */}
                 <div className="px-5 py-4 border-t border-border flex justify-around">
-                  {["Home", "Search", "Sessions", "Profile"].map((item) => (
+                  {["Home", "Requests", "Sessions", "Earnings"].map((item) => (
                     <div key={item} className="flex flex-col items-center gap-1">
-                      <div className={`w-5 h-5 rounded-full ${item === "Home" ? "bg-compass-green" : "bg-muted"}`} />
+                      <div className={`w-5 h-5 rounded-full ${item === "Home" ? "bg-primary" : "bg-muted"}`} />
                       <span className="text-[10px] text-muted-foreground">{item}</span>
                     </div>
                   ))}
