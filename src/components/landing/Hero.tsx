@@ -1,11 +1,57 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, CheckCircle, DollarSign } from "lucide-react";
-import heroImage from "@/assets/hero-chw.jpg";
+import { ArrowRight, Shield, CheckCircle, DollarSign, Heart, Users, Clock } from "lucide-react";
+import heroChwImage from "@/assets/hero-chw-toggle.jpg";
+import heroMemberImage from "@/assets/hero-member.jpg";
+
+type ViewMode = "chw" | "member";
+
+const viewData = {
+  chw: {
+    image: heroChwImage,
+    imageAlt: "Community Health Worker helping an elderly person with paperwork",
+    headline: <>Your CHW career,{" "}<span className="text-secondary">on your terms.</span></>,
+    description: <>Compass connects <strong className="text-foreground">Community Health Workers</strong> with residents who need help navigating housing, food, recovery, and healthcare — and <strong className="text-foreground">pays you for every session</strong> through Medi-Cal.</>,
+    cta: { label: "Start Earning as a CHW", route: "/auth" },
+    secondaryCta: { label: "I Need Help" },
+    stats: [
+      { label: "Active CHWs", value: "200+" },
+      { label: "Avg. Earnings", value: "$22", suffix: "/session" },
+      { label: "Member Cost", value: "$0" },
+    ],
+    badges: [
+      { icon: Shield, label: "HIPAA Compliant" },
+      { icon: CheckCircle, label: "Medi-Cal Reimbursed" },
+      { icon: DollarSign, label: "Flexible Schedule" },
+    ],
+  },
+  member: {
+    image: heroMemberImage,
+    imageAlt: "Community member receiving support and guidance from a healthcare navigator",
+    headline: <>Get the help you need,{" "}<span className="text-secondary">at no cost.</span></>,
+    description: <>Compass pairs you with a <strong className="text-foreground">trained Community Health Worker</strong> who speaks your language and knows your neighborhood — to help with <strong className="text-foreground">housing, food, healthcare,</strong> and more.</>,
+    cta: { label: "Get Matched with a CHW", route: "/waitlist" },
+    secondaryCta: { label: "Learn More" },
+    stats: [
+      { label: "Members Helped", value: "1,200+" },
+      { label: "Service Areas", value: "5" },
+      { label: "Your Cost", value: "$0" },
+    ],
+    badges: [
+      { icon: Heart, label: "100% Free" },
+      { icon: Users, label: "Bilingual CHWs" },
+      { icon: Clock, label: "Same-Week Matching" },
+    ],
+  },
+};
 
 const Hero = () => {
   const navigate = useNavigate();
+  const [activeView, setActiveView] = useState<ViewMode>("chw");
+  const data = viewData[activeView];
+
   return (
     <section className="relative overflow-hidden bg-background">
       {/* Navbar */}
@@ -28,91 +74,104 @@ const Hero = () => {
 
       {/* Hero Content */}
       <div className="container pt-32 pb-16 md:pt-40 md:pb-24">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left */}
+        {/* Toggle */}
+        <div className="flex justify-center mb-10">
+          <div className="inline-flex items-center bg-card border border-border rounded-full p-1 shadow-card">
+            {(["chw", "member"] as const).map((mode) => (
+              <button
+                key={mode}
+                onClick={() => setActiveView(mode)}
+                className={`relative px-6 py-2.5 rounded-full text-body-sm font-semibold transition-all duration-300 ${
+                  activeView === mode
+                    ? "bg-primary text-primary-foreground shadow-elevated"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {mode === "chw" ? "I'm a CHW" : "I'm a Community Member"}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <AnimatePresence mode="wait">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            key={activeView}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.4 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 mb-6">
-              <div className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-              <span className="text-label text-primary uppercase">Launching in Los Angeles</span>
-            </div>
-
-            <h1 className="text-display-lg md:text-display-xl tracking-tight text-foreground">
-              Your CHW career,{" "}
-              <span className="text-secondary">on your terms.</span>
-            </h1>
-
-            <p className="mt-5 text-body-lg text-muted-foreground max-w-lg">
-              Compass connects <strong className="text-foreground">Community Health Workers</strong> with residents who need help navigating housing, food, recovery, and healthcare — and <strong className="text-foreground">pays you for every session</strong> through Medi-Cal.
-            </p>
-
-            <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <Button variant="hero" size="xl" className="text-primary-foreground" onClick={() => navigate("/auth")}>
-                Start Earning as a CHW
-                <ArrowRight className="ml-1" />
-              </Button>
-              <Button variant="outline" size="xl">
-                I Need Help
-              </Button>
-            </div>
-
-            {/* Trust badges */}
-            <div className="mt-8 flex flex-wrap gap-3">
-              {[
-                { icon: Shield, label: "HIPAA Compliant" },
-                { icon: CheckCircle, label: "Medi-Cal Reimbursed" },
-                { icon: DollarSign, label: "$0 Cost to Members" },
-              ].map(({ icon: Icon, label }) => (
-                <div key={label} className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-card border border-border shadow-card">
-                  <Icon className="w-4 h-4 text-primary" />
-                  <span className="text-body-sm font-medium text-foreground">{label}</span>
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {/* Left */}
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 mb-6">
+                  <div className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+                  <span className="text-label text-primary uppercase">Launching in Los Angeles</span>
                 </div>
-              ))}
-            </div>
-          </motion.div>
 
-          {/* Right - Hero Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative hidden lg:block"
-          >
-            <div className="relative rounded-3xl overflow-hidden shadow-elevated">
-              <img
-                src={heroImage}
-                alt="Community Health Worker helping a community member navigate healthcare paperwork"
-                className="w-full h-auto object-cover aspect-[4/3]"
-                width={1280}
-                height={854}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-compass-dark/40 via-transparent to-transparent" />
-              
-              {/* Floating stat card */}
-              <div className="absolute bottom-6 left-6 right-6 bg-primary/95 backdrop-blur-md rounded-2xl p-4">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-label text-primary-foreground/70 uppercase">Active CHWs</p>
-                    <p className="text-display-sm text-primary-foreground">200+</p>
-                  </div>
-                  <div className="h-10 w-px bg-primary-foreground/20" />
-                  <div>
-                    <p className="text-label text-primary-foreground/70 uppercase">Avg. Earnings</p>
-                    <p className="text-display-sm text-primary-foreground">$22<span className="text-body-sm text-primary-foreground/70">/session</span></p>
-                  </div>
-                  <div className="h-10 w-px bg-primary-foreground/20" />
-                  <div>
-                    <p className="text-label text-primary-foreground/70 uppercase">Member Cost</p>
-                    <p className="text-display-sm text-primary-foreground">$0</p>
+                <h1 className="text-display-lg md:text-display-xl tracking-tight text-foreground">
+                  {data.headline}
+                </h1>
+
+                <p className="mt-5 text-body-lg text-muted-foreground max-w-lg">
+                  {data.description}
+                </p>
+
+                <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                  <Button variant="hero" size="xl" className="text-primary-foreground" onClick={() => navigate(data.cta.route)}>
+                    {data.cta.label}
+                    <ArrowRight className="ml-1" />
+                  </Button>
+                  <Button variant="outline" size="xl">
+                    {data.secondaryCta.label}
+                  </Button>
+                </div>
+
+                {/* Badges */}
+                <div className="mt-8 flex flex-wrap gap-3">
+                  {data.badges.map(({ icon: Icon, label }) => (
+                    <div key={label} className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-card border border-border shadow-card">
+                      <Icon className="w-4 h-4 text-primary" />
+                      <span className="text-body-sm font-medium text-foreground">{label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right - Image */}
+              <div className="relative hidden lg:block">
+                <div className="relative rounded-3xl overflow-hidden shadow-elevated">
+                  <img
+                    src={data.image}
+                    alt={data.imageAlt}
+                    className="w-full h-auto object-cover aspect-[4/3]"
+                    width={1280}
+                    height={960}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-compass-dark/40 via-transparent to-transparent" />
+
+                  {/* Floating stat card */}
+                  <div className="absolute bottom-6 left-6 right-6 bg-primary/95 backdrop-blur-md rounded-2xl p-4">
+                    <div className="flex items-center justify-between">
+                      {data.stats.map((stat, i) => (
+                        <div key={stat.label} className="flex items-center gap-4">
+                          {i > 0 && <div className="h-10 w-px bg-primary-foreground/20" />}
+                          <div>
+                            <p className="text-label text-primary-foreground/70 uppercase">{stat.label}</p>
+                            <p className="text-display-sm text-primary-foreground">
+                              {stat.value}
+                              {stat.suffix && <span className="text-body-sm text-primary-foreground/70">{stat.suffix}</span>}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </motion.div>
-        </div>
+        </AnimatePresence>
       </div>
     </section>
   );
