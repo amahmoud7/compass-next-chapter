@@ -1,4 +1,5 @@
 import Hero from "@/components/landing/Hero";
+import ClientSlider from "@/components/landing/ClientSlider";
 import Services from "@/components/landing/Services";
 import HowItWorks from "@/components/landing/HowItWorks";
 import ForCHWs from "@/components/landing/ForCHWs";
@@ -10,6 +11,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Hero />
+      <ClientSlider />
       <Services />
       <HowItWorks />
       <ForCHWs />
