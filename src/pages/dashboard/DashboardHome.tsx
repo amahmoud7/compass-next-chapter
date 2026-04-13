@@ -17,7 +17,7 @@ const upcomingSessions = [
 
 const recentActivity = [
   { action: "Session completed", detail: "Housing Support with Carlos M.", time: "2 hours ago" },
-  { action: "Payment received", detail: "$22.00 — Medi-Cal reimbursement", time: "Yesterday" },
+  { action: "Payment received", detail: "$32.00 — Medi-Cal reimbursement", time: "Yesterday" },
   { action: "New request", detail: "Mental Health navigation from Ana P.", time: "Yesterday" },
   { action: "Session completed", detail: "Food & Pantry with David R.", time: "2 days ago" },
 ];

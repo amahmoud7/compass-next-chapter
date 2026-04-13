@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, CheckCircle, DollarSign, Heart, Users, Clock } from "lucide-react";
 import heroChwImage from "@/assets/hero-chw-toggle.jpg";
 import heroMemberImage from "@/assets/hero-member.jpg";
+import compassIcon from "@/assets/compass-icon.png";
 
 type ViewMode = "chw" | "member";
 
@@ -13,12 +14,12 @@ const viewData = {
     image: heroChwImage,
     imageAlt: "Community Health Worker helping an elderly person with paperwork",
     headline: <>Your CHW career,{" "}<span className="text-secondary">on your terms.</span></>,
-    description: <>Compass connects <strong className="text-foreground">Community Health Workers</strong> with residents who need help navigating housing, food, recovery, and healthcare — and <strong className="text-foreground">pays you for every session</strong> through Medi-Cal.</>,
+    description: <>Compass connects <strong className="text-foreground">Community Health Workers</strong> with residents who need help navigating housing, food, recovery, and healthcare — and <strong className="text-foreground">pays you for your service</strong> through Medi-Cal.</>,
     cta: { label: "Start Earning as a CHW", route: "/auth" },
     secondaryCta: { label: "I Need Help" },
     stats: [
       { label: "Active CHWs", value: "200+" },
-      { label: "Avg. Earnings", value: "$22", suffix: "/session" },
+      { label: "Avg. Earnings", value: "$32", suffix: "/hour" },
       { label: "Member Cost", value: "$0" },
     ],
     badges: [
@@ -57,7 +58,8 @@ const Hero = () => {
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
         <div className="container flex items-center justify-between h-16">
-          <a href="/" className="font-display text-xl font-bold text-foreground tracking-tight">
+          <a href="/" className="font-display text-xl font-bold text-foreground tracking-tight flex items-center gap-2">
+            <img src={compassIcon} alt="Compass logo" className="w-7 h-7" />
             Compass<span className="text-secondary">CHW</span>
           </a>
           <div className="hidden md:flex items-center gap-8">

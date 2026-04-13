@@ -37,7 +37,7 @@ const ForCHWs = () => {
               {/* Earnings card overlay */}
               <div className="absolute bottom-6 left-6 right-6 bg-primary/95 backdrop-blur-md rounded-xl p-4">
                 <p className="text-label text-primary-foreground/70 uppercase">Avg. Earnings</p>
-                <p className="text-display-sm text-primary-foreground">$22<span className="text-body-sm text-primary-foreground/70 font-normal"> / session</span></p>
+                <p className="text-display-sm text-primary-foreground">$32<span className="text-body-sm text-primary-foreground/70 font-normal"> / hour</span></p>
                 <p className="text-body-sm text-secondary mt-1 font-medium">Reimbursed via Medi-Cal</p>
               </div>
             </div>

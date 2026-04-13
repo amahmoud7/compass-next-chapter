@@ -32,7 +32,7 @@ const services = [
 const stats = [
   { value: "81%", label: "CHW session completion" },
   { value: "5", label: "Service verticals" },
-  { value: "$22", label: "Avg. earning / session" },
+  { value: "$32", label: "Avg. earning / hour" },
   { value: "$0", label: "Cost to members" },
 ];
 
@@ -49,7 +49,7 @@ const Services = () => {
         >
           <p className="text-label text-primary uppercase tracking-wider mb-3">Service Areas</p>
           <h2 className="text-display-md md:text-display-lg text-foreground">
-            Five verticals where <strong>CHWs make an impact</strong>
+            Where <strong>CHWs make an impact</strong>
           </h2>
           <p className="text-body-lg text-muted-foreground mt-3 max-w-2xl mx-auto">
             As a Compass CHW, you'll guide members through these critical service areas — and get reimbursed for each session.
