@@ -1,4 +1,5 @@
 import { useState } from "react";
+import compassIcon from "@/assets/compass-icon.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Shield, CheckCircle, Star } from "lucide-react";
