@@ -13,12 +13,12 @@ const weeklyData = [
 const maxAmount = Math.max(...weeklyData.map((d) => d.amount));
 
 const transactions = [
-  { id: 1, label: "Housing Support — Maria G.", date: "Apr 11", amount: "$22.00", status: "Pending" },
-  { id: 2, label: "Healthcare Nav — James T.", date: "Apr 10", amount: "$22.00", status: "Paid" },
-  { id: 3, label: "Food & Pantry — David R.", date: "Apr 9", amount: "$22.00", status: "Paid" },
-  { id: 4, label: "Mental Health — Ana P.", date: "Apr 9", amount: "$22.00", status: "Paid" },
-  { id: 5, label: "Housing Support — Carlos M.", date: "Apr 8", amount: "$22.00", status: "Paid" },
-  { id: 6, label: "Rehab & Recovery — Lisa K.", date: "Apr 7", amount: "$22.00", status: "Paid" },
+  { id: 1, label: "Housing Support — Maria G.", date: "Apr 11", amount: "$32.00", status: "Pending" },
+  { id: 2, label: "Healthcare Nav — James T.", date: "Apr 10", amount: "$32.00", status: "Paid" },
+  { id: 3, label: "Food & Pantry — David R.", date: "Apr 9", amount: "$32.00", status: "Paid" },
+  { id: 4, label: "Mental Health — Ana P.", date: "Apr 9", amount: "$32.00", status: "Paid" },
+  { id: 5, label: "Housing Support — Carlos M.", date: "Apr 8", amount: "$32.00", status: "Paid" },
+  { id: 6, label: "Rehab & Recovery — Lisa K.", date: "Apr 7", amount: "$32.00", status: "Paid" },
 ];
 
 const Earnings = () => {
