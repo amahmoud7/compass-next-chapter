@@ -69,7 +69,8 @@ const Auth = () => {
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
         <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
-          <Link to="/" className="font-display text-xl font-bold text-foreground tracking-tight">
+          <Link to="/" className="font-display text-xl font-bold text-foreground tracking-tight flex items-center gap-2">
+            <img src={compassIcon} alt="Compass logo" className="w-7 h-7" />
             Compass<span className="text-secondary">CHW</span>
           </Link>
           <div className="hidden md:flex items-center gap-8">
@@ -109,7 +110,7 @@ const Auth = () => {
               <div className="flex flex-col gap-3 mt-2">
                 {[
                   "Set your own schedule and work flexibly",
-                  "Earn $22+ per session via Medi-Cal reimbursement",
+                  "Earn $32+/hour via Medi-Cal reimbursement",
                   "Make a real impact in your community",
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3">
